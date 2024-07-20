@@ -1,0 +1,42 @@
+<html>
+  <body>
+    <form id="infoForm">
+      <div>
+        <label for="nameInput">
+          Name:
+        </label>
+        <input id="nameInput" name="name">
+      </div>
+      <div>
+        <label for="ageInput">
+          Name:
+        </label>
+        <input id="ageInput" name="age">
+      </div>
+      <div>
+        <button id="infoSubmitButton">Submit</button>
+      </div>
+    </form>
+
+    <div id="outputContainer"></div>
+  </body>
+  <script>
+    const $nameInput = document.querySelector("#nameInput");
+    const $ageInput = document.querySelector("#ageInput");
+    const $infoSubmitButton = document.querySelector("#infoSubmitButton");
+    const $outputContainer = document.querySelector("#outputContainer");
+
+    function appendInput(evt) {
+      evt.preventDefault();
+
+      const output = document.createElement("p");
+      output.innerText = `Hi my name is ${$nameInput.value} and my age is ${$ageInput.value}`;
+
+      $outputContainer.append(output);
+
+    }
+    $infoSubmitButton.addEventListener("click", appendInput);
+
+
+  </script>
+</html>
